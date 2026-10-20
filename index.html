@@ -16,13 +16,85 @@
 @media(max-width:900px){.workspace{display:block}.sidebar{position:static;margin-bottom:20px}.stepnav{padding:10px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}.nav-caption{display:none}.stepbtn{display:flex;flex-direction:column;gap:7px;text-align:center;margin:0;padding:9px 3px;font-size:10px;min-height:85px}.stepnum{width:27px;height:27px}.navsub{display:none}.side-note{display:none}.sidebar-progress{display:flex;gap:14px;align-items:center}.progress-top{flex:none;margin:9px 0 0;gap:15px}.progress-track{flex:1;margin:9px 0 0}.split{grid-template-columns:minmax(0,1.5fr) minmax(220px,1fr)}.hero{padding-top:26px}.lesson-header h2{font-size:25px}.symbol-grid{grid-template-columns:repeat(7,minmax(0,1fr))}.sheet-rows{grid-template-columns:repeat(2,minmax(0,1fr))}.saved{display:none}.top-actions button{font-size:12px;min-height:38px;padding:7px 10px}.topinner{gap:9px}}
 @media(max-width:690px){body{font-size:14px}.topinner{padding:11px 14px;flex-wrap:wrap}.brand{font-size:16px}.brand-logo{width:30px;height:30px;border-radius:10px}.brand small{font-size:9px}.top-actions{gap:6px;margin-left:auto}.top-actions button{font-size:11px;min-height:34px;padding:5px 9px;border-radius:10px}.app{padding-inline:14px;padding-bottom:90px}.hero{grid-template-columns:1fr;padding:23px 2px 21px;gap:0}.hero h1{font-size:29px}.hero p{font-size:12px;margin-top:10px}.hero-art{display:none}.eyebrow{font-size:10px;margin-bottom:8px}.pill{font-size:10px}.stepnav{border-radius:17px;gap:1px;padding:7px 3px}.stepbtn{font-size:9px;letter-spacing:-.04em;padding:7px 0;gap:6px;min-height:73px;border-radius:10px}.stepnum{font-size:11px;width:24px;height:24px}.stepbtn span:last-child{max-width:46px;line-height:1.3}.workspace{display:block}.lesson-header{gap:8px;margin-bottom:15px}.lesson-header h2{font-size:23px}.lesson-header p{font-size:12px}.stepmark{font-size:10px;padding:4px 8px}.split,.split.equal{grid-template-columns:1fr}.panel{border-radius:18px;padding:18px}.cards-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.card-choice{padding:4px;border-radius:12px}.card-label{font-size:10px}.pair{gap:10px}.pair-label{font-size:11px}.bottom-nav{position:fixed;bottom:0;left:0;width:100%;background:var(--surface);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));z-index:20;margin:0;box-shadow:0 -3px 18px #213c6a08}.bottom-nav small{font-size:10px;max-width:85px;text-align:center}.bottom-nav button{font-size:12px;padding:8px 12px}.lesson-foot{font-size:10px}.line-buttons{grid-template-columns:repeat(3,minmax(0,1fr))}.sheet-rows{gap:9px}.sheet-row{padding:11px}.sheet-row h4{font-size:12px}.sheet-inputs{gap:4px}.sheet-row input{width:36px!important;min-height:40px;font-size:17px}.sheet-inputs .paren{font-size:14px}.hint-buttons{flex-wrap:wrap}.symbol-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.symbol-tile svg{width:45px;height:45px}.field-grid{gap:10px}.mini-deck{grid-template-columns:repeat(4,minmax(0,1fr))}.metric-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px}.metric strong{font-size:23px}.metric small{font-size:10px}.verification-list{grid-template-columns:repeat(3,minmax(0,1fr))}.point-map{grid-template-columns:repeat(4,minmax(0,1fr))}.calc-display{font-size:21px;gap:9px}.palette{grid-template-columns:repeat(4,minmax(0,1fr))}.print-panel-actions{grid-template-columns:1fr}.dialog-content{padding:18px}.dialog-head{padding:15px 18px}.teacher-grid{grid-template-columns:1fr 1fr}.presentation .app{padding-top:15px}.presentation .lesson-header h2{font-size:25px}.finish{padding:22px 15px}.finish h3{font-size:20px}.toast{bottom:88px}}
 @media(max-width:365px){.sheet-rows{grid-template-columns:1fr}.topinner{gap:7px}.brand{width:100%}.top-actions{margin:0;width:100%;justify-content:space-between}.hero h1{font-size:26px}.point-map{grid-template-columns:repeat(3,minmax(0,1fr))}.top-actions button{padding-inline:8px}}
+
+/* 모바일 큰 글씨: 설명·힌트·입력 안내까지 함께 확대합니다. */
+@media screen and (max-width:690px){
+ .hero,.lesson-foot{display:none}.app{padding-top:20px}
+ body{font-size:18px;line-height:1.8;--muted:#425776;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+ html[data-theme="dark"] body{--muted:#c2cfe2}
+ h1,.hero h1{font-size:32px;line-height:1.4}
+ h2,.lesson-header h2,.presentation .lesson-header h2{font-size:28px;line-height:1.45}
+ h3,.finish h3{font-size:24px;line-height:1.5}h4{font-size:21px;line-height:1.5}
+ p,small,.tight,.hero p,.lesson-header p,.side-note,.note,.feedback,.hint,.sheet-feedback,.remainder-balls,.task-step,.task-step p,.print-panel-actions small,.finish p{font-size:18px;line-height:1.85}
+ .note,.feedback,.hint,.remainder-balls{font-size:19px}
+ .hero p,.lesson-header p{margin-top:14px}
+ .note{padding:18px}.feedback:not(:empty){padding:13px}.feedback{margin-top:16px}
+ button,select,input{font-size:18px;line-height:1.5;min-height:50px}
+ button{padding:12px 16px}button.small,.hint-buttons button{font-size:17px;min-height:46px;padding:9px 12px}
+ label,.checklabel{font-size:18px;line-height:1.7}
+ .topinner{gap:12px;padding:14px}.brand{font-size:20px;width:100%}.brand small{font-size:13px}
+ .top-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:9px;margin:0}
+ .top-actions button{font-size:17px;min-height:46px;padding:10px}.brand-logo{width:36px;height:36px}
+ .app{padding-inline:12px;padding-bottom:110px}.hero{padding-block:24px}
+ .eyebrow,.activity-tag,.label-line{font-size:16px;line-height:1.6}.pill{font-size:15px;line-height:1.6}
+ .eyebrow{flex-wrap:wrap;gap:8px}.stepmark{font-size:16px;padding:5px 10px}
+ .stepbtn{padding:7px 0;font-size:9px;min-height:73px}.stepnum{font-size:11px;width:24px;height:24px}
+ .progress-top{font-size:16px;gap:12px}.progress-track{height:8px}
+ .sidebar-progress{margin-top:5px}.sidebar{margin-bottom:26px}
+ .panel{padding:20px 16px}.stack{gap:20px}.lesson-header{margin-bottom:20px}
+ .row,.buttonrow{gap:12px}.label-line{margin-bottom:16px}.chip{font-size:16px;line-height:1.6;padding:7px 10px}
+ .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card-choice{padding:7px}
+ .card-label,.pair-label{font-size:17px;line-height:1.6;margin-top:9px}
+ .pair{gap:12px}.discovery-placeholder,.empty{font-size:18px;line-height:1.8}
+ .task-step{padding:16px 0;gap:13px}.task-step b{width:30px;height:30px;font-size:16px;line-height:30px}
+ .rule-question h4{font-size:21px}.choice-buttons{gap:12px;margin-top:15px}
+ .calc-display{display:grid;grid-template-columns:52px 16px 52px 16px minmax(0,1fr);gap:7px;font-size:25px;padding:24px 10px}
+ .calc-display select{font-size:27px;width:100%;padding:6px 4px}.calc-result{font-size:38px;text-align:center}
+ .remainder-balls{flex-wrap:wrap;justify-content:flex-start;padding:12px 4px;gap:12px}
+ .ball{width:30px;height:30px;flex:none}.coord-tile{font-size:24px;padding:20px}
+ .line-buttons{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.line-buttons button{font-size:18px;padding:11px 6px}
+ .direction-item{font-size:18px;line-height:1.8;padding:16px}.direction-list{gap:14px}
+ .point-map{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.point-token{font-size:18px;padding:11px}.point-token b{font-size:21px}
+ .tabs{gap:12px}.tabs button{font-size:18px;padding:13px 9px}
+ .sheet-rows,.field-grid{grid-template-columns:1fr;gap:17px}.sheet-row{padding:17px 12px}
+ .sheet-row h4{font-size:21px}.sheet-inputs{gap:7px;margin-top:17px}
+ .sheet-row input{width:50px!important;min-height:56px;font-size:26px;padding:8px 2px}
+ .sheet-inputs .paren,.sheet-inputs>span{font-size:22px}.sheet-feedback{min-height:32px;margin-top:12px}
+ .hint-buttons{gap:10px;margin-top:12px}.hint{padding:13px;margin-top:13px}
+ table,.mapping-table td,.mapping-table th{font-size:18px;line-height:1.7}
+ th,td{padding:11px 6px}.mapping-table td:last-child{white-space:normal}.symbol-preview{width:40px;height:40px}
+ .symbol-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.symbol-tile{padding:15px 8px}
+ .symbol-tile svg{width:70px;height:70px}.symbol-tile .symbol-number{font-size:16px}.symbol-tile .symbol-name{font-size:20px}
+ .rangefield{grid-template-columns:86px minmax(0,1fr) 42px;font-size:17px}.rangefield output{font-size:16px}
+ .preset-buttons{flex-wrap:wrap}.mini-deck{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+ .metric-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.metric{padding:17px 8px}
+ .metric strong{font-size:32px}.metric small{font-size:17px;line-height:1.6}
+ .verification-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.pair-result{font-size:16px;padding:9px 7px}
+ .game-stats{flex-wrap:wrap;gap:15px;padding:16px}.game-stats small{font-size:16px;line-height:1.5}
+ .game-stats strong{font-size:30px}#gameState{font-size:20px!important}
+ .palette{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.palette button{font-size:17px;padding:12px 4px}.palette svg{width:60px;height:60px}
+ .teacher-grid{grid-template-columns:1fr}.teacher-answers td,.teacher-answers th{font-size:16px;line-height:1.6;padding:9px 4px;word-break:break-all}
+ .print-panel-actions button{font-size:20px;padding:17px}.print-panel-actions small{margin-top:9px}
+ .dialog-head{padding:17px 15px}.dialog-head h2{font-size:24px}.dialog-content{padding:18px 15px}
+ details{padding:16px}summary{font-size:20px;line-height:1.65}
+ .bottom-nav{gap:8px;padding:12px 10px calc(12px + env(safe-area-inset-bottom))}
+ .bottom-nav button{font-size:18px;min-height:52px;padding:11px 13px}.bottom-nav small{display:none}
+ .lesson-foot{font-size:15px;line-height:1.8}.toast{font-size:18px;line-height:1.7;bottom:100px}
+ .demo-banner,.storage-warn{font-size:17px;line-height:1.7}.finish p{font-size:19px}
+}
+@media screen and (max-width:365px){
+ .hero h1{font-size:29px}.lesson-header h2{font-size:26px}.panel{padding-inline:14px}
+ .sheet-row input{width:48px!important}.sheet-inputs{gap:6px}.bottom-nav button{font-size:17px;padding-inline:11px}
+ .brand{font-size:19px}.brand small{font-size:12px}
+}
+
 @page{size:A4 portrait;margin:10mm}
 @media print{html,body{background:#fff!important;color:#111!important;margin:0!important;padding:0!important;font:10pt/1.5 var(--font)!important}.topbar,.app,.toast,.demo-banner,.storage-warn,dialog,.celebration,.skip{display:none!important}.print-root{display:block!important;background:#fff;color:#111;--ink:#111;--muted:#333;--line:#aaa;--surface:#fff;--bg:#fff;--primary:#222;--primary-soft:#fff;--teal:#222;--teal-soft:#fff}.print-page{width:190mm;min-height:265mm;break-after:page;page-break-after:always;overflow:visible}.print-page:last-child{break-after:auto;page-break-after:auto}.print-page h1{font-size:18pt;line-height:1.4;letter-spacing:-.04em;margin-bottom:3mm}.print-page h2{font-size:13pt;margin:4mm 0 2mm}.print-page p{font-size:9pt}.print-meta{display:flex;justify-content:space-between;font-size:9pt;border-bottom:.3mm solid #555;padding-bottom:3mm;margin-bottom:4mm}.print-page .graph{border:.3mm solid #aaa;background:#fff}.print-page .graph svg{width:100%;height:auto}.print-graph{max-width:140mm;margin:4mm auto}.print-page table{font-size:9pt}.print-page td,.print-page th{padding:2.3mm;border:.25mm solid #888;color:#111}.print-lines{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:4mm 0}.print-line-box{border:.3mm solid #777;border-radius:2mm;padding:3mm;min-height:16mm;font-size:9pt}.print-line-box small{font-size:8pt;display:block;color:#333}.print-sheet-layout{display:grid;grid-template-columns:139mm 46mm;gap:5mm}.print-sheet-cards{display:grid;grid-template-columns:1fr 1fr;gap:0}.print-sheet-card{border:.35mm solid #111;padding:5mm 3mm;min-height:48mm;break-inside:avoid;text-align:center}.print-sheet-card h3{font-size:11pt;margin:1mm 0 6mm}.print-sheet-card div{font-size:13pt;white-space:nowrap}.print-map td{height:26.5mm;text-align:center;padding:2mm}.print-map th{font-size:8pt;text-align:center}.print-map .symbol-preview{width:12mm;height:12mm}.print-card-grid{display:grid;grid-template-columns:repeat(3,62mm);column-gap:2mm;row-gap:4mm;margin-top:6mm}.print-card-item{width:62mm;min-height:65mm;break-inside:avoid;text-align:center}.print-card-item .dobble-svg{width:61.1mm;height:61.1mm;margin:0 auto}.print-card-label{font-size:7pt;text-align:center;color:#333;height:4mm}.print-card-instructions{font-size:9pt;padding:8mm 3mm;align-self:center}.ruler{width:50mm;border-top:.3mm solid #111;margin-top:5mm;position:relative;text-align:center;font-size:8pt;padding-top:2mm}.ruler:before,.ruler:after{content:"";position:absolute;height:3mm;border-left:.3mm solid #111;top:-1.6mm}.ruler:before{left:0}.ruler:after{right:0}.print-page.mono .dobble-svg,.print-page.mono .symbol-preview{filter:grayscale(1)}.print-page .point text{fill:#111!important}.print-page .point circle{fill:#fff;stroke:#222}.print-footer{margin-top:4mm;border-top:.2mm solid #aaa;padding-top:2mm;font-size:8pt;color:#333}.print-note{border:.25mm solid #777;border-radius:2mm;padding:3mm;margin-top:4mm;font-size:9pt}.print-root *{-webkit-print-color-adjust:exact;print-color-adjust:exact}.print-root .graph .line-path.softline{opacity:.6}.print-cards-page h1{font-size:16pt}.print-relation-page .teacher-answers{margin-top:2mm}.print-relation-page .teacher-answers td,.print-relation-page .teacher-answers th{padding:1.4mm;font-size:9pt}.print-relation-page .print-relation-table td,.print-relation-page .print-relation-table th{padding:1mm;font-size:9pt}.print-relation-graph{width:80mm;margin:3mm auto}}
 </style>
 </head>
 <body>
 <a class="skip" href="#lesson">본문 바로가기</a>
-<header class="topbar"><div class="topinner"><div class="brand"><span class="brand-logo" aria-hidden="true"><svg width="27" height="27" viewBox="0 0 32 32"><circle cx="10" cy="11" r="7" fill="none" stroke="white" stroke-width="2"/><circle cx="21" cy="20" r="8" fill="none" stroke="#8ce9db" stroke-width="2"/><circle cx="16" cy="15" r="2.5" fill="#ffca70"/></svg></span>도블 수학 공작소 <small>ver1.00</small></div><div class="top-actions"><span id="saveStatus" class="saved" aria-live="polite">기기 임시 저장</span><button data-action="theme" id="themeButton" aria-label="다크모드로 전환">☾ 화면</button><button data-action="print-menu">인쇄</button><button data-action="help">이용 안내</button><button data-action="teacher">교사용</button></div></div></header>
+<header class="topbar"><div class="topinner"><div class="brand"><span class="brand-logo" aria-hidden="true"><svg width="27" height="27" viewBox="0 0 32 32"><circle cx="10" cy="11" r="7" fill="none" stroke="white" stroke-width="2"/><circle cx="21" cy="20" r="8" fill="none" stroke="#8ce9db" stroke-width="2"/><circle cx="16" cy="15" r="2.5" fill="#ffca70"/></svg></span>도블 수학 공작소 <small>ver1.01</small></div><div class="top-actions"><span id="saveStatus" class="saved" aria-live="polite">기기 임시 저장</span><button data-action="theme" id="themeButton" aria-label="다크모드로 전환">☾ 화면</button><button data-action="print-menu">인쇄</button><button data-action="help">이용 안내</button><button data-action="teacher">교사용</button></div></div></header>
 <div id="storageWarn" class="storage-warn" hidden>이 브라우저에서는 임시 저장을 사용할 수 없습니다. 창을 닫기 전에 작품을 인쇄해 주세요.</div>
 <div id="demoBanner" class="demo-banner" hidden><strong>교사용 자동 시연 중</strong><span>체험 과정을 순서대로 보여줍니다.</span><button class="small" data-action="demo-stop">시연 끝내기</button></div>
 <div class="app"><section class="hero" aria-label="프로그램 소개"><div><div class="eyebrow">수학축전 체험 <span class="pill">손으로 발견하는 수학 · 15–20분</span></div><h1>7장의 카드에 숨겨진 수학!<br>나만의 도블 만들기</h1><p>두 카드에 같은 그림이 딱 하나. 그 비밀을 풀고, 직접 만들어 보세요.</p></div><div class="hero-art" id="heroArt" aria-hidden="true"></div></section><div class="workspace"><aside class="sidebar"><nav class="stepnav" id="stepNav" aria-label="학습 단계"></nav><div class="sidebar-progress"><div class="progress-top"><span>활동 완료</span><strong id="progressText">0 / 7</strong></div><div class="progress-track" role="progressbar" aria-label="활동 완료율" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="progressBar"><div class="progress-fill" id="progressFill"></div></div></div><div class="side-note"><strong>오늘의 작은 도전</strong>그림 7개 → 카드 7장<br>카드마다 그림은 3개<br>어떤 두 카드에도 공통 그림은 1개<div class="buttonrow"><button class="small" data-action="reset">새 관람객 시작</button></div></div></aside><main id="lesson" class="lesson" tabindex="-1"></main></div><footer class="lesson-foot">수학축전 체험 · p=2 유한사영평면 · 모든 활동은 인터넷 없이 실행됩니다.</footer></div>
