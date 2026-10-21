@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3f6fc">
+<title>도블 수학 부스 운영 대본</title>
+<style>
+:root{--ink:#172b49;--muted:#435875;--blue:#315ddd;--teal:#087f80;--line:#dbe3ef;--paper:#fff;--bg:#f3f6fc;--soft:#edf2ff;--mint:#e7f6f3;--gold:#fff5df}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:19px;line-height:1.8;word-break:keep-all}
+.wrap{width:min(900px,100% - 32px);margin:0 auto;padding:26px 0 70px}.hero{padding:28px 30px;background:linear-gradient(135deg,#eaf0ff,#f1faf8);border:1px solid var(--line);border-radius:26px}.eyebrow{color:var(--blue);font-size:16px;font-weight:850;letter-spacing:.04em}.hero h1{margin:8px 0 6px;font-size:clamp(30px,7vw,42px);line-height:1.25;letter-spacing:-.04em}.hero p{margin:10px 0 0;color:var(--muted);font-size:19px}.opening{margin:18px 0 22px;padding:19px 22px;background:var(--paper);border:1px solid var(--line);border-radius:18px}.opening strong{display:block;margin-bottom:5px;color:var(--teal);font-size:16px}.opening p{margin:0;font-size:20px;font-weight:650}
+.toc{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:18px 0 26px}.toc a{display:grid;place-items:center;min-height:52px;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:14px;color:var(--ink);font-size:16px;font-weight:800}.toc a:hover,.toc a:focus{outline:3px solid #b9caff}.stage{scroll-margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px;margin:18px 0;box-shadow:0 8px 24px #203c6810}.stage-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:15px}.num{flex:0 0 48px;width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:var(--blue);color:#fff;font-size:24px;font-weight:900}.stage h2{margin:0;font-size:27px;line-height:1.35}.subtitle{margin:3px 0 0;color:var(--muted);font-size:16px;font-weight:650}.label{margin:19px 0 7px;font-size:16px;font-weight:900;color:var(--teal)}.say{margin:0;padding:17px 19px;background:var(--soft);border-left:5px solid var(--blue);border-radius:12px;font-size:20px;line-height:1.8}.say:before{content:"“";color:var(--blue);font-weight:900}.say:after{content:"”";color:var(--blue);font-weight:900}.prompt{padding:13px 16px;background:var(--mint);border-radius:12px;font-size:18px}.prompt b{color:var(--teal)}.qa{margin:0;padding:0;list-style:none}.qa li{padding:12px 0;border-top:1px solid var(--line);font-size:18px}.qa li:first-child{border-top:0}.q{display:block;font-weight:850}.a{display:block;padding-left:1.6em;color:var(--muted)}.finish{margin-top:24px;padding:22px;background:#172b49;color:#fff;border-radius:20px}.finish h2{margin:0 0 5px;font-size:24px}.finish p{margin:0;color:#e3ebf7;font-size:18px}.small{margin-top:20px;color:var(--muted);font-size:15px;text-align:center}.print{position:fixed;right:18px;bottom:18px;border:0;border-radius:16px;background:var(--blue);color:#fff;padding:14px 20px;font:inherit;font-size:17px;font-weight:850;box-shadow:0 6px 18px #172b4940;cursor:pointer}
+@media(max-width:600px){body{font-size:19px}.wrap{width:min(100% - 22px,900px);padding-top:12px}.hero{padding:22px 19px;border-radius:21px}.hero p{font-size:18px}.opening{padding:17px}.opening p{font-size:19px}.toc{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:14px 0 20px}.toc a{min-height:48px;font-size:15px}.stage{padding:19px 17px;border-radius:19px;margin:14px 0}.stage-head{gap:11px}.num{width:43px;height:43px;flex-basis:43px;border-radius:14px;font-size:22px}.stage h2{font-size:24px}.subtitle{font-size:16px}.say{font-size:19px;padding:15px 15px}.prompt,.qa li{font-size:17px}.label{font-size:16px}.a{padding-left:1.1em}.print{right:12px;bottom:12px;padding:11px 15px;font-size:16px}}
+@media print{body{background:#fff;font-size:12pt}.wrap{width:100%;padding:0}.hero,.opening,.stage,.finish{box-shadow:none}.hero{padding:16pt}.hero h1{font-size:25pt}.hero p,.opening p,.say{font-size:13pt}.toc{grid-template-columns:repeat(7,1fr);gap:4pt;margin:10pt 0}.toc a{min-height:0;padding:6pt;font-size:9pt}.stage{padding:13pt;margin:10pt 0;border-radius:12pt;break-inside:avoid}.stage h2{font-size:17pt}.say{padding:10pt}.label{margin:10pt 0 4pt}.prompt,.qa li{font-size:11pt}.print{display:none}.finish{break-inside:avoid}.small{font-size:9pt}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="eyebrow">부스 운영자용 · 관객에게 그대로 읽어 주세요</div>
+    <h1>도블 수학 부스 운영 대본</h1>
+    <p>각 단계의 파란 문장은 짧은 설명 대본입니다. 초록 질문으로 관객의 생각을 듣고, 아래 답변은 질문이 나왔을 때 참고하세요.</p>
+  </header>
+  <section class="opening">
+    <strong>처음 오신 분께 · 15초 소개</strong>
+    <p>“도블 카드에는 신기한 규칙이 하나 있어요. 어떤 카드 두 장을 골라도 같은 그림이 꼭 하나 있다는 거예요. 그 규칙이 어떻게 만들어지는지 직접 해보고, 마지막에는 나만의 카드로 확인해 볼게요.”</p>
+  </section>
+  <nav class="toc" aria-label="단계 바로가기">
+    <a href="#s1">1단계</a><a href="#s2">2단계</a><a href="#s3">3단계</a><a href="#s4">4단계</a><a href="#s5">5단계</a><a href="#s6">6단계</a><a href="#s7">7단계</a>
+  </nav>
+
+  <section class="stage" id="s1">
+    <div class="stage-head"><span class="num">1</span><div><h2>도블의 비밀</h2><p class="subtitle">두 카드에서 같은 그림 찾기</p></div></div>
+    <div class="label">읽어 줄 대본</div><p class="say">먼저 카드 두 장을 살펴보고, 두 카드에 함께 있는 그림을 찾아볼까요? 그림이 여러 개라 헷갈려도 괜찮아요. 하나를 찾으면 눌러 보세요. 오늘은 왜 어떤 두 카드에도 공통 그림이 하나씩 있는지 알아볼 거예요.</p>
+    <div class="prompt"><b>관객에게 물어보기</b> “두 카드가 바뀌어도 공통 그림은 몇 개일까요?”</div>
+    <div class="label">자주 받는 질문</div><ul class="qa">
+      <li><span class="q">Q. 왜 꼭 하나 있어요?</span><span class="a">A. 카드가 점과 직선의 규칙으로 만들어져 있어서예요. 마지막 단계에서 직접 모든 짝을 확인해 볼 거예요.</span></li>
+      <li><span class="q">Q. 그림 모양이나 방향이 달라도 같은 그림인가요?</span><span class="a">A. 네. 크기나 방향이 달라도 같은 그림이면 같은 것으로 찾아요.</span></li>
+    </ul>
+  </section>
+
+  <section class="stage" id="s2">
+    <div class="stage-head"><span class="num">2</span><div><h2>0과 1의 세계</h2><p class="subtitle">2로 나눈 나머지로 계산하기</p></div></div>
+    <div class="label">읽어 줄 대본</div><p class="say">이제 숫자를 0과 1만 쓰는 세계에서 계산해 볼게요. 여기서는 1 더하기 1이 2가 아니라 0이에요. 2를 2로 나누면 나머지가 0이기 때문이죠. 화면에서 숫자를 골라 계산해 보세요.</p>
+    <div class="prompt"><b>관객에게 물어보기</b> “1+1은 2로 나누면 나머지가 얼마일까요?”</div>
+    <div class="label">자주 받는 질문</div><ul class="qa">
+      <li><span class="q">Q. 1+1이 왜 0이에요?</span><span class="a">A. 보통 덧셈이 아니라, 2로 나눈 나머지만 적는 계산이라서 그래요. 1+1=2이고, 그 나머지가 0이에요.</span></li>
+      <li><span class="q">Q. 그럼 1+1+1은요?</span><span class="a">A. 3을 2로 나눈 나머지인 1이에요.</span></li>
+    </ul>
+  </section>
+
+  <section class="stage" id="s3">
+    <div class="stage-head"><span class="num">3</span><div><h2>점과 직선</h2><p class="subtitle">네 좌표를 잇고 직선 찾기</p></div></div>
+    <div class="label">읽어 줄 대본</div><p class="say">0과 1로 만들 수 있는 좌표는 네 개예요. (0,0), (1,0), (0,1), (1,1)이죠. 이 점들을 이어 직선을 찾아볼게요. 두 점을 지나가는 직선은 어떤 두 점을 골라도 하나씩 정해집니다.</p>
+    <div class="prompt"><b>관객에게 물어보기</b> “(0,1)과 (1,0)을 잇는 직선은 어떤 모양일까요?”</div>
+    <div class="label">자주 받는 질문</div><ul class="qa">
+      <li><span class="q">Q. 좌표가 왜 네 개뿐이에요?</span><span class="a">A. x와 y가 각각 0 또는 1만 될 수 있어요. 두 자리의 가능한 조합이 2×2라서 네 개예요.</span></li>
+      <li><span class="q">Q. 그림에서 선이 교차하면 만나는 점인가요?</span><span class="a">A. 선이 실제로 지나는 표시된 점에서 만날 때 교점이에요. 그림만 겹쳐 보이는 교차는 세지 않아요.</span></li>
+    </ul>
+  </section>
+
+  <section class="stage" id="s4">
+    <div class="stage-head"><span class="num">4</span><div><h2>무한원점</h2><p class="subtitle">방향별 점을 더해 7점·7직선 만들기</p></div></div>
+    <div class="label">읽어 줄 대본</div><p class="say">평행한 선은 지금 종이에서는 만나지 않죠. 수학에서는 같은 방향의 평행선들이 만나는 자리를 ‘무한원점’이라고 생각해요. 실제로 아주 멀리 있는 점을 찾는 건 아니에요. 세 방향에 무한원점을 하나씩 더하면, 점 7개와 직선 7개로 이루어진 파노 평면이 완성됩니다.</p>
+    <div class="prompt"><b>관객에게 물어보기</b> “수평·기울어진 방향·수직 방향에는 각각 어떤 무한원점이 모일까요?”</div>
+    <div class="label">자주 받는 질문</div><ul class="qa">
+      <li><span class="q">Q. 무한원점은 진짜 무한히 먼 곳에 있나요?</span><span class="a">A. 실제 위치를 가리키는 점이라기보다, 같은 방향의 평행선이 공유한다고 정한 수학적 점이에요.</span></li>
+      <li><span class="q">Q. 동그라미도 직선인가요?</span><span class="a">A. 파노 평면 그림에서는 바깥의 원도 직선 하나를 나타내요. 그 원 위의 세 점이 그 직선에 놓인 점들이에요.</span></li>
+      <li><span class="q">Q. 선 두 개는 언제나 한 점에서 만나나요?</span><span class="a">A. 네. 평행선도 방향에 해당하는 무한원점에서 만나도록 확장했기 때문에, 이 구조에서는 두 직선마다 공통점이 하나예요.</span></li>
+    </ul>
+  </section>
+
+  <section class="stage" id="s5">
+    <div class="stage-head"><span class="num">5</span><div><h2>학습지 완성</h2><p class="subtitle">점과 직선을 번호로 정리하기</p></div></div>
+    <div class="label">읽어 줄 대본</div><p class="say">이제 그림 번호를 점 번호와 연결해 카드 일곱 장을 완성해 볼게요. 카드마다 그림 세 개가 들어가요. 번호를 적는 순서는 상관없지만, 한 카드 안에서 같은 번호를 두 번 쓰면 안 돼요.</p>
+    <div class="prompt"><b>관객에게 물어보기</b> “이 직선에 놓인 세 점의 번호를 찾아 빈칸에 적어 볼까요?”</div>
+    <div class="label">자주 받는 질문</div><ul class="qa">
+      <li><span class="q">Q. 카드 번호 순서가 정답과 달라도 되나요?</span><span class="a">A. 네. (0,1,3)과 (3,0,1)은 같은 세 그림을 담은 카드예요.</span></li>
+      <li><span class="q">Q. 답이 맞는지 어디서 확인해요?</span><span class="a">A. 번호를 입력한 뒤 ‘확인하기’를 눌러 보세요. 틀린 카드만 다시 살펴볼 수 있어요.</span></li>
+    </ul>
+  </section>
+
+  <section class="stage" id="s6">
+    <div class="stage-head"><span class="num">6</span><div><h2>카드 만들기</h2><p class="subtitle">그림을 골라 나만의 도블 제작</p></div></div>
+    <div class="label">읽어 줄 대본</div><p class="say">이제 점 번호마다 원하는 그림을 골라 나만의 카드를 꾸며 볼게요. 그림을 바꾸거나 색을 바꿔도 번호와 직선의 관계는 그대로예요. 학습지의 일곱 카드가 맞으면 카드 일곱 장을 완성하고 인쇄할 수 있어요.</p>
+    <div class="prompt"><b>관객에게 물어보기</b> “서로 헷갈리지 않도록 어떤 그림을 고르면 좋을까요?”</div>
+    <div class="label">자주 받는 질문</div><ul class="qa">
+      <li><span class="q">Q. 그림을 아무렇게나 바꿔도 규칙이 유지돼요?</span><span class="a">A. 점 번호와 카드에 들어가는 조합은 바뀌지 않아서 공통 그림 규칙은 유지돼요. 서로 다른 번호에는 구별되는 그림을 골라 주세요.</span></li>
+      <li><span class="q">Q. 내가 가진 사진도 쓸 수 있나요?</span><span class="a">A. 네. 기기에 저장된 사진이나 그림을 불러올 수 있어요.</span></li>
+    </ul>
+  </section>
+
+  <section class="stage" id="s7">
+    <div class="stage-head"><span class="num">7</span><div><h2>검증과 게임</h2><p class="subtitle">모든 카드 짝을 확인하고 놀기</p></div></div>
+    <div class="label">읽어 줄 대본</div><p class="say">마지막으로 만든 카드가 규칙을 지키는지 확인해 볼게요. 카드 일곱 장에서 두 장씩 고르면 모두 21쌍이에요. 한 쌍씩 비교해서 공통 그림이 정확히 하나인지 확인하고, 이상 없으면 게임도 해 보세요.</p>
+    <div class="prompt"><b>관객에게 물어보기</b> “두 직선의 공통점 하나가 카드에서는 무엇으로 보일까요?”</div>
+    <div class="label">자주 받는 질문</div><ul class="qa">
+      <li><span class="q">Q. 왜 21쌍을 확인하나요?</span><span class="a">A. 일곱 장에서 두 장씩 고르는 모든 경우가 7×6÷2=21쌍이기 때문이에요.</span></li>
+      <li><span class="q">Q. 직선과 카드가 어떻게 연결돼요?</span><span class="a">A. 직선 위의 점 세 개가 카드의 그림 세 개가 돼요. 두 직선의 공통점 하나가 두 카드의 공통 그림 하나예요.</span></li>
+      <li><span class="q">Q. 게임 규칙은 뭔가요?</span><span class="a">A. 카드 두 장에서 공통 그림을 먼저 찾아 누르면 돼요. 제한 시간 모드에서는 30초 동안 최대한 많이 찾아보세요.</span></li>
+    </ul>
+  </section>
+
+  <section class="finish"><h2>마무리 멘트</h2><p>“오늘은 0과 1의 계산에서 출발해 점과 직선을 만들고, 어떤 두 카드에도 공통 그림이 하나 있는 도블의 규칙을 확인했어요. 직접 만든 카드도 가져가서 가족이나 친구와 해 보세요!”</p></section>
+  <p class="small">운영 팁: 시간이 부족하면 파란 대본만 읽고, 질문이 나오면 해당 단계의 답변을 참고하세요.</p>
+</main>
+<button class="print" type="button" onclick="window.print()">인쇄하기</button>
+</body>
+</html>
